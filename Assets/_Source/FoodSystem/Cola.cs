@@ -1,5 +1,5 @@
-using Extensions;
 using UnityEngine;
+using Utils.Extensions;
 
 namespace FoodSystem
 {

@@ -1,10 +1,9 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Core
+namespace Utils
 {
-    public static class SceneChanger
+    public class SceneChanger : MonoBehaviour
     {
         public static void ReloadScene()
         {
@@ -13,6 +12,7 @@ namespace Core
         
         public static void LoadSceneBySceneIndex(int index)
         {
+            Debug.Log("qwe");
             SceneManager.LoadScene(index);
         }
     }

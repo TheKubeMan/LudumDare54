@@ -1,8 +1,9 @@
 using System;
 using Core;
-using Extensions;
 using FoodSystem.Data;
 using UnityEngine;
+using Utils;
+using Utils.Extensions;
 using Zenject;
 
 namespace FoodSystem
