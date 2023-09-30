@@ -8,12 +8,13 @@ using UnityEngine;
 public class TetrisSpawn : MonoBehaviour
 {
     public List<GameObject> items;
-    string arr = PlayerPrefs.GetString("items", "");
+    string arr;
     string[] arr2;
-    Transform spawnpoint;
+    public Transform spawnpoint;
     //Это вешаем на независимый объект для отслеживания того что мы можем спавнить, а что нет
     void Start()
     {
+        arr = PlayerPrefs.GetString("items", "");
         if (arr == "")
             End();
         else
@@ -28,6 +29,7 @@ public class TetrisSpawn : MonoBehaviour
                     else
                         items.Remove(items[i]);
                 }
+                Instantiate(items[i], spawnpoint.position, spawnpoint. rotation);
             }
         }
     }

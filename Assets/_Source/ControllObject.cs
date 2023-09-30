@@ -33,7 +33,7 @@ public class ControllObject : MonoBehaviour
             string i = PlayerPrefs.GetString("items");
             PlayerPrefs.SetString("items", index + " " + i);
             int a = UnityEngine.Random.Range(0, food.Length);
-            Instantiate(food[0], new Vector3(0, 3, 0), spawnpoint.rotation);
+            Instantiate(food[a], new Vector3(0, 3, 0), spawnpoint.rotation);
             gameObject.GetComponent<ControllObject>().enabled = false;
         }
     }

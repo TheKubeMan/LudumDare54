@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8972994703941227649}
   - component: {fileID: 2247726483756269741}
   m_Layer: 0
-  m_Name: food_item
+  m_Name: food_item 4
   m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.7830189, g: 0.40186808, b: 0.06331688, a: 1}
+  m_Color: {r: 0.06274509, g: 0.78431374, b: 0.20675813, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food:
-  - {fileID: 2976704159466524122}
+  - {fileID: 2976704159466524122, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
   - {fileID: 2976704159466524122, guid: 7561066056b879c4193a22b30a2daebe, type: 3}
   - {fileID: 2976704159466524122, guid: c3163c42466603a42944aeb2df187d3f, type: 3}
   - {fileID: 2976704159466524122, guid: e9ca80e881de23e4895c241bab90690e, type: 3}
-  - {fileID: 2976704159466524122, guid: 55a94cf36c7c86542a47f12ada3cae95, type: 3}
+  - {fileID: 2976704159466524122}
   spawnpoint: {fileID: 3024940034177011265}
-  index: 0
+  index: 4
