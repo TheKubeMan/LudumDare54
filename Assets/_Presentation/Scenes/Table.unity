@@ -123,6 +123,79 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &81603736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1026630865351441677, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2976704159466524122, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_Name
+      value: food item
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.049110293
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.1305132
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024940034177011265, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972994703941227649, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.016477883
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972994703941227649, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972994703941227649, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.49177542
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +292,7 @@ GameObject:
   - component: {fileID: 1388517233}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,5 +386,5 @@ Transform:
   m_LocalScale: {x: 9.625, y: 0.50258505, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
