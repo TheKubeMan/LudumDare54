@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FoodSystem.Data;
 using UnityEngine;
 
 public class ControllObject : MonoBehaviour
@@ -20,6 +21,7 @@ public class ControllObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        landed = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -53,6 +55,9 @@ public class ControllObject : MonoBehaviour
     void OnTriggerEnter2D (Collider2D other)
     {
         if (other.tag == "Finish")
+        {
             landed = true;
+            LandedFoodPool.Add(gameObject);
+        }
     }
 }

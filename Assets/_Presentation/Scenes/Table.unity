@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2247726483756269741, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
+      propertyPath: rSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2976704159466524122, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
       propertyPath: m_Name
       value: food item

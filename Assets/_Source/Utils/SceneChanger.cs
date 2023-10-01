@@ -12,7 +12,6 @@ namespace Utils
         
         public static void LoadSceneBySceneIndex(int index)
         {
-            Debug.Log("qwe");
             SceneManager.LoadScene(index);
         }
     }

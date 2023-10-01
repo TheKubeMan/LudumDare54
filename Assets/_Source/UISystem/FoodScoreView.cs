@@ -16,16 +16,24 @@ namespace UISystem
         private void OnEnable()
         {
             _foodScorer.OnFoodScoreChange += ScoreUpdate;
+            _foodScorer.OnFoodMaxScoreChange += SliderMaxValueUpdate;
         }
 
         private void OnDisable()
         {
             _foodScorer.OnFoodScoreChange -= ScoreUpdate;
+            _foodScorer.OnFoodMaxScoreChange += SliderMaxValueUpdate;
         }
 
-        private void Init()
+        private void Start()
         {
-            // foodScoreSlider.highValue = _foodScorer.MaxScore;
+            SliderMaxValueUpdate();
+            ScoreUpdate();
+        }
+
+        private void SliderMaxValueUpdate()
+        {
+            foodScoreSlider.maxValue = _foodScorer.MaxScore;
         }
         
         private void ScoreUpdate()
