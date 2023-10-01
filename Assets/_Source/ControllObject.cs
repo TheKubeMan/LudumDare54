@@ -37,16 +37,10 @@ public class ControllObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (rb.velocity.y > 0.25 || Mathf.Abs(rb.velocity.x) > 0.25)
-            gameObject.tag = "food";
-        else
-            gameObject.tag = "Finish";
-        if (rb.velocity.y >= 0 && landed && rb.velocity.y < 0.1)
+        if (landed && rb.velocity.y >= 0)
         {
+            rb.velocity = new Vector2(0, 0);
             i = PlayerPrefs.GetString("items");
-            Debug.Log("i " + i);
-            PlayerPrefs.SetString("items", index + " " + i);
-            Debug.Log("items " + PlayerPrefs.GetString("items"));
             Camera.main.GetComponent<ClearCount>().Spawn();
             gameObject.GetComponent<ControllObject>().enabled = false;
         }
