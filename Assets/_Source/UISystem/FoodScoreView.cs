@@ -33,6 +33,7 @@ namespace UISystem
 
         private void SliderMaxValueUpdate()
         {
+            foodScoreText.text = $"{_foodScorer.Score}/{_foodScorer.MaxScore}";
             foodScoreSlider.maxValue = _foodScorer.MaxScore;
         }
         

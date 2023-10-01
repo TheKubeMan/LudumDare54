@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2272625469633262052}
   - component: {fileID: 1026630865351441677}
   - component: {fileID: 8972994703941227649}
+  - component: {fileID: 6619407524679332132}
   - component: {fileID: 2247726483756269741}
   m_Layer: 0
-  m_Name: food_item
+  m_Name: NormalFood 1
   m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.7830189, g: 0.40186808, b: 0.06331688, a: 1}
   m_FlipX: 0
@@ -159,6 +160,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6619407524679332132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976704159466524122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3ef4a0ccc3b664cb2f75512289d3e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionConfig: {fileID: 11400000, guid: 30aeb454811d27f4796a5d52aaa06209, type: 2}
 --- !u!114 &2247726483756269741
 MonoBehaviour:
   m_ObjectHideFlags: 0

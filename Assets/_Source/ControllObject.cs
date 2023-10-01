@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ControllObject : MonoBehaviour
 {
+    public event Action OnFoodLanding;
     Rigidbody2D rb;
     bool landed;
     public float rSpeed;
@@ -44,20 +45,30 @@ public class ControllObject : MonoBehaviour
         if (rb.velocity.y >= 0 && landed && rb.velocity.y < 0.1)
         {
             i = PlayerPrefs.GetString("items");
-            Debug.Log("i " + i);
+            //Debug.Log("i " + i);
             PlayerPrefs.SetString("items", index + " " + i);
-            Debug.Log("items " + PlayerPrefs.GetString("items"));
-            Camera.main.GetComponent<ClearCount>().Spawn();
+            //Debug.Log("items " + PlayerPrefs.GetString("items"));
+            //Camera.main.GetComponent<ClearCount>().Spawn();
             gameObject.GetComponent<ControllObject>().enabled = false;
         }
     }
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        if (other.tag == "Finish")
+        if ((other.tag == "Finish" || other.tag == "food") && landed == false)
         {
+            Debug.Log("OnTriggerEnter2D");
             landed = true;
             LandedFoodPool.Add(gameObject);
+            OnFoodLanding?.Invoke();
+        }
+    }
+
+    public void OnDestroy()
+    {
+        if (landed == false)
+        {
+            OnFoodLanding?.Invoke();
         }
     }
 }

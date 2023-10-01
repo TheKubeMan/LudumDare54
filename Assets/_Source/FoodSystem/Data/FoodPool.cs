@@ -13,6 +13,11 @@ namespace FoodSystem.Data
             _pool.Add(gameObject);
         }
 
+        public bool Remove(GameObject gameObject)
+        {
+            return _pool.Remove(gameObject);
+        }
+
         public GameObject GetActive()
         {
             return _pool.FirstOrDefault(obj => !obj.activeSelf);
