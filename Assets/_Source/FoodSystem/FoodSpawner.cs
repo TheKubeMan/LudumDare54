@@ -22,17 +22,11 @@ namespace FoodSystem
 
         private void Start()
         {
-            if (inStomach)
-            {
-                SpawnLandedFoodPool();
-            }
-            else
-            {
-                SpawnFoodPool();
-            }
+            DontDestroyOnLoad(foodParent.gameObject);
+            SpawnFoodPool();
+            SpawnFood();
             
             _foodScorer.SetMaxScore(foodCount);
-            SpawnFood();
         }
 
         private void OnDisable()
@@ -46,15 +40,8 @@ namespace FoodSystem
 
         public void SpawnFood()
         {
-            GameObject food;
-            if (!inStomach)
-            {
-                food = _foodPool.GetByIndex(SpawnedFoodCount);
-            }
-            else
-            {
-                food = LandedFoodPool.FoodPool.GetByIndex(SpawnedFoodCount);
-            }
+            GameObject food = _foodPool.GetByIndex(SpawnedFoodCount);
+            
             food.transform.position = spawnPoint.transform.position;
             food.SetActive(true);
             SpawnedFoodCount++;
@@ -75,14 +62,6 @@ namespace FoodSystem
             for (int i = 0; i < foodCount; i++)
             {
                 SpawnFoodObject(foodPrefabs[rnd.Next(0, foodPrefabs.Count)]);
-            }
-        }
-
-        private void SpawnLandedFoodPool()
-        {
-            for (int i = 0; i < LandedFoodPool.FoodPool.Count(); i++)
-            {
-                SpawnFoodObject(LandedFoodPool.FoodPool.GetByIndex(i));
             }
         }
     }

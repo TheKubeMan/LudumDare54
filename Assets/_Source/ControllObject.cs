@@ -59,15 +59,6 @@ public class ControllObject : MonoBehaviour
         {
             Debug.Log("OnTriggerEnter2D");
             landed = true;
-            LandedFoodPool.Add(gameObject);
-            OnFoodLanding?.Invoke();
-        }
-    }
-
-    public void OnDestroy()
-    {
-        if (landed == false)
-        {
             OnFoodLanding?.Invoke();
         }
     }
