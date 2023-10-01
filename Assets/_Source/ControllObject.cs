@@ -20,6 +20,7 @@ public class ControllObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        landed = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -45,7 +46,6 @@ public class ControllObject : MonoBehaviour
             Debug.Log("i " + i);
             PlayerPrefs.SetString("items", index + " " + i);
             Debug.Log("items " + PlayerPrefs.GetString("items"));
-            Camera.main.GetComponent<ClearCount>().Spawn();
             gameObject.GetComponent<ControllObject>().enabled = false;
         }
     }
@@ -53,6 +53,9 @@ public class ControllObject : MonoBehaviour
     void OnTriggerEnter2D (Collider2D other)
     {
         if (other.tag == "Finish")
+        {
             landed = true;
+            LandedObjectPool.Add(gameObject);
+        }
     }
 }
