@@ -35,10 +35,10 @@ public class ControllObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (rb.velocity == new Vector2(0, 0))
-            gameObject.tag = "Finish";
-        else
+        if (rb.velocity.y > 0.25 || Mathf.Abs(rb.velocity.x) > 0.25)
             gameObject.tag = "food";
+        else
+            gameObject.tag = "Finish";
         if (rb.velocity.y >= 0 && landed && rb.velocity.y < 0.1)
         {
             i = PlayerPrefs.GetString("items");

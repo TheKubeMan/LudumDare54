@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d1fbfbde4a4c64b8fa05c5293f198c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rSpeed: 1
-  rFriction: 1
-  rSmoothness: 1
+  rSpeed: 3
+  rFriction: 0.15
+  rSmoothness: 5
   index: 2
