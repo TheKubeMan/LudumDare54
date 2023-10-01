@@ -38,17 +38,13 @@ public class ControllObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (rb.velocity.y > 0.25 || Mathf.Abs(rb.velocity.x) > 0.25)
-            gameObject.tag = "food";
-        else
-            gameObject.tag = "Finish";
-        if (rb.velocity.y >= 0 && landed && rb.velocity.y < 0.1)
+        if (landed && rb.velocity.y >= 0)
         {
+            rb.velocity = new Vector2(0, 0);
             i = PlayerPrefs.GetString("items");
-            //Debug.Log("i " + i);
+            Debug.Log("i " + i);
             PlayerPrefs.SetString("items", index + " " + i);
-            //Debug.Log("items " + PlayerPrefs.GetString("items"));
-            //Camera.main.GetComponent<ClearCount>().Spawn();
+            Debug.Log("items " + PlayerPrefs.GetString("items"));
             gameObject.GetComponent<ControllObject>().enabled = false;
         }
     }
@@ -59,6 +55,14 @@ public class ControllObject : MonoBehaviour
         {
             Debug.Log("OnTriggerEnter2D");
             landed = true;
+            OnFoodLanding?.Invoke();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (!landed)
+        {
             OnFoodLanding?.Invoke();
         }
     }
