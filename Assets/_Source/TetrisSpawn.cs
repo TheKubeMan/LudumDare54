@@ -15,6 +15,7 @@ public class TetrisSpawn : MonoBehaviour
     void Start()
     {
         arr = PlayerPrefs.GetString("items", "");
+        Debug.Log(arr);
         if (arr == "")
             End();
         else
@@ -23,12 +24,9 @@ public class TetrisSpawn : MonoBehaviour
             for (int i = 0; i < items.Count; i++)
             {
                 for (int j = 0; j < arr2.Length; j++)
-                {
                     if (i == Convert.ToInt32(arr2[j]))
                         break;
-                    else
-                        items.Remove(items[i]);
-                }
+                items.Remove(items[i]);
                 Instantiate(items[i], spawnpoint.position, spawnpoint. rotation);
             }
         }

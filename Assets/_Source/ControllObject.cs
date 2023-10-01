@@ -6,9 +6,13 @@ using UnityEngine;
 public class ControllObject : MonoBehaviour
 {
     Rigidbody2D rb;
-    public GameObject[] food;
-    public Transform spawnpoint;
     bool landed;
+    public float rSpeed;
+    public float rFriction;
+    public float rSmoothness;
+    float rotateVal;
+    Quaternion RotateTo;
+    string i;
     //мы закидываем индекс в стринг потому что в playerprefs нельзя использовать массивы
     //полученные индексы забираем в желудке, кидаем в массив и по ним спавним объекты 
     public string index;
@@ -24,23 +28,31 @@ public class ControllObject : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         if (moveX != 0)
             rb.velocity = new Vector2(moveX * 3, rb.velocity.y);
+        rotateVal += Input.GetAxis("Vertical") * rSpeed * rFriction;
+        RotateTo = Quaternion.Euler(0, 0, rotateVal);
+        transform.rotation = Quaternion.Lerp(transform.rotation, RotateTo, Time.deltaTime * rSmoothness);
     }
 
     void FixedUpdate()
     {
-        if (rb.velocity.y >= 0 && landed)
+        if (rb.velocity.y > 0.25 || Mathf.Abs(rb.velocity.x) > 0.25)
+            gameObject.tag = "food";
+        else
+            gameObject.tag = "Finish";
+        if (rb.velocity.y >= 0 && landed && rb.velocity.y < 0.1)
         {
-            string i = PlayerPrefs.GetString("items");
+            i = PlayerPrefs.GetString("items");
+            Debug.Log("i " + i);
             PlayerPrefs.SetString("items", index + " " + i);
-            int a = UnityEngine.Random.Range(0, food.Length);
-            Instantiate(food[a], new Vector3(0, 3, 0), spawnpoint.rotation);
+            Debug.Log("items " + PlayerPrefs.GetString("items"));
+            Camera.main.GetComponent<ClearCount>().Spawn();
             gameObject.GetComponent<ControllObject>().enabled = false;
         }
     }
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        if (other.tag == "food")
+        if (other.tag == "Finish")
             landed = true;
     }
 }
