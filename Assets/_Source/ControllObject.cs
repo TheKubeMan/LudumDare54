@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FoodSystem.Data;
 using UnityEngine;
 
 public class ControllObject : MonoBehaviour
@@ -55,7 +56,7 @@ public class ControllObject : MonoBehaviour
         if (other.tag == "Finish")
         {
             landed = true;
-            LandedObjectPool.Add(gameObject);
+            LandedFoodPool.Add(gameObject);
         }
     }
 }
