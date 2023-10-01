@@ -102,7 +102,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0.25
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 206a36f80a142fd41aa5f39e5069b9c1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -171,11 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d1fbfbde4a4c64b8fa05c5293f198c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food:
-  - {fileID: 2976704159466524122, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
-  - {fileID: 2976704159466524122, guid: 7561066056b879c4193a22b30a2daebe, type: 3}
-  - {fileID: 2976704159466524122}
-  - {fileID: 2976704159466524122, guid: e9ca80e881de23e4895c241bab90690e, type: 3}
-  - {fileID: 2976704159466524122, guid: 55a94cf36c7c86542a47f12ada3cae95, type: 3}
-  spawnpoint: {fileID: 3024940034177011265}
+  rSpeed: 1
+  rFriction: 1
+  rSmoothness: 1
   index: 2
