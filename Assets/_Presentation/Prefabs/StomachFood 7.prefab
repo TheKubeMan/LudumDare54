@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionConfig: {fileID: 11400000, guid: 30aeb454811d27f4796a5d52aaa06209, type: 2}
-  <Size>k__BackingField: 1
+  <Size>k__BackingField: 2
 --- !u!114 &2247726483756269741
 MonoBehaviour:
   m_ObjectHideFlags: 0
