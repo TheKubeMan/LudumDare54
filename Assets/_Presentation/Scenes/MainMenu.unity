@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1150951031}
+      - m_Target: {fileID: 1150951032}
         m_TargetAssemblyTypeName: AudioSystem.AudioMute, Assembly-CSharp
         m_MethodName: UnmuteBackgroundAudio
         m_Mode: 1
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1150951031}
+      - m_Target: {fileID: 1150951032}
         m_TargetAssemblyTypeName: AudioSystem.AudioMute, Assembly-CSharp
         m_MethodName: MuteBackgroundAudio
         m_Mode: 1
@@ -1275,6 +1275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1150951030}
   - component: {fileID: 1150951031}
+  - component: {fileID: 1150951032}
   m_Layer: 5
   m_Name: AudioButtons
   m_TagString: Untagged
@@ -1304,6 +1305,20 @@ RectTransform:
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150951031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150951029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee05bee4193f4134a5e6d50df457f0c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAudioOffButton: {fileID: 39106127}
+  backgroundAudioOnButton: {fileID: 14980457}
+--- !u!114 &1150951032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
