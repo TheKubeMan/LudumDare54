@@ -8,7 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(Food))]
 public class ControllObject : MonoBehaviour
 {
-    public event Action OnFoodLanding;
+    public event Action OnFoodFullLanding;
     [field:SerializeField] public GameObject StomachPrefab { get; private set; }
     Rigidbody2D rb;
     bool landed;
@@ -28,36 +28,25 @@ public class ControllObject : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         _food = GetComponent<Food>();
         _food.OnGroundEnter += RemoveFromLandedFood;
-        _food.OnGroundEnter += OnFoodLadingInvoke;
+        _food.OnGroundEnter += OnFoodFullLandingInvoke;
     }
 
     private void OnDestroy()
     {
-        Debug.Log("ControllObjectDisable");
         _food.OnGroundEnter -= RemoveFromLandedFood;
-        _food.OnGroundEnter -= OnFoodLadingInvoke;
+        _food.OnGroundEnter -= OnFoodFullLandingInvoke;
     }
 
     void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        if (moveX != 0)
-            rb.velocity = new Vector2(moveX * 3, rb.velocity.y);
-        rotateVal += Input.GetAxis("Vertical") * rSpeed * rFriction;
-        RotateTo = Quaternion.Euler(0, 0, rotateVal);
-        transform.rotation = Quaternion.Lerp(transform.rotation, RotateTo, Time.deltaTime * rSmoothness);
-    }
-
-    void FixedUpdate()
-    {
-        if (landed && rb.velocity.y >= 0)
+        if (!landed)
         {
-            rb.velocity = new Vector2(0, 0);
-            i = PlayerPrefs.GetString("items");
-            //Debug.Log("i " + i);
-            PlayerPrefs.SetString("items", index + " " + i);
-            //Debug.Log("items " + PlayerPrefs.GetString("items"));
-            gameObject.GetComponent<ControllObject>().enabled = false;
+            float moveX = Input.GetAxisRaw("Horizontal");
+            if (moveX != 0)
+                rb.velocity = new Vector2(moveX * 3, rb.velocity.y);
+            rotateVal += Input.GetAxis("Vertical") * rSpeed * rFriction;
+            RotateTo = Quaternion.Euler(0, 0, rotateVal);
+            transform.rotation = Quaternion.Lerp(transform.rotation, RotateTo, Time.deltaTime * rSmoothness);
         }
     }
 
@@ -74,16 +63,17 @@ public class ControllObject : MonoBehaviour
         FoodSpawner.LandedFood.Remove(gameObject);
     }
 
-    private void OnFoodLadingInvoke()
+    private void OnFoodFullLandingInvoke()
     {
-        OnFoodLanding?.Invoke();
+        OnFoodFullLanding?.Invoke();
     }
 
     private void Land()
     {
+        rb.velocity = new Vector2(0, 0);
         landed = true;
         _food.FoodScorer.AddScore(1);
         FoodSpawner.LandedFood.Add(StomachPrefab);
-        OnFoodLadingInvoke();
+        OnFoodFullLandingInvoke();
     }
 }

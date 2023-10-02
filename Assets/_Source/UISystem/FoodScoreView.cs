@@ -39,7 +39,7 @@ namespace UISystem
         
         private void ScoreUpdate()
         {
-            foodScoreText.text = $"{_foodScorer.Score}";
+            foodScoreText.text = $"{_foodScorer.Score}/{_foodScorer.MaxScore}";
             foodScoreSlider.value = _foodScorer.Score;
         }
     }

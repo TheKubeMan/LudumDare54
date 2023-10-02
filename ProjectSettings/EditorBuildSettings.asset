@@ -14,10 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Presentation/Scenes/StomachTetris.unity
     guid: 2c733fa2ad968af408b46c90dfe7d727
-  - enabled: 1
-    path: Assets/_Presentation/Scenes/TestScene.unity
-    guid: f9a8ee11a0561ff4696af910fe654223
-  - enabled: 1
-    path: Assets/_Presentation/Scenes/Table.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

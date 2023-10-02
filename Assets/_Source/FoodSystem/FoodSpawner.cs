@@ -28,7 +28,6 @@ namespace FoodSystem
 
         private void Awake()
         {
-            _foodScorer.SetMaxScore(foodCount);
             if (!inStomach)
             {
                 LandedFood.Clear();
@@ -37,12 +36,13 @@ namespace FoodSystem
             {
                 foodCount = LandedFood.Count;
             }
+            _foodScorer.SetMaxScore(foodCount);
         }
 
         private void Start()
         {
             SpawnFoodPool();
-            SpawnFood();
+            SpawnFoodFull();
         }
 
         private void OnDisable()
@@ -50,11 +50,11 @@ namespace FoodSystem
             var controllObjects = transform.GetComponentsInChildren<ControllObject>();
             foreach (var obj in controllObjects)
             {
-                obj.OnFoodLanding -= SpawnFood;
+                obj.OnFoodFullLanding -= SpawnFoodFull;
             }
         }
 
-        public void SpawnFood()
+        public void SpawnFoodFull()
         {
             if (SpawnedFoodCount >= _foodPool.Count())
             {
@@ -76,11 +76,12 @@ namespace FoodSystem
             var food = _diContainer.InstantiatePrefab(gameObject, Vector3.zero, quaternion.identity, foodParent);
             food.SetActive(false);
             _foodPool.Add(food);
-            food.GetComponent<ControllObject>().OnFoodLanding += SpawnFood;
+            food.GetComponent<ControllObject>().OnFoodFullLanding += SpawnFoodFull;
         }
     
         private void SpawnFoodPool()
         {
+            Debug.Log("SpawnFoodPool");
             if (!inStomach)
             {
                 for (int i = 0; i < foodCount; i++)
@@ -100,7 +101,14 @@ namespace FoodSystem
         private void SpawnerFinish()
         {
             Debug.Log("SpawnerFinish");
-            SceneChanger.LoadSceneBySceneIndex(2);
+            if (inStomach)
+            {
+                SceneChanger.LoadSceneBySceneIndex(0);
+            }
+            else
+            {
+                SceneChanger.LoadSceneBySceneIndex(2);
+            }
         }
     }
 }

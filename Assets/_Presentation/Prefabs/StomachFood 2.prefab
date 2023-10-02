@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9811321, g: 0.6040019, b: 0.27305093, a: 1}
+  m_Color: {r: 0.8087721, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionConfig: {fileID: 11400000, guid: 30aeb454811d27f4796a5d52aaa06209, type: 2}
+  <Size>k__BackingField: 0
 --- !u!114 &2247726483756269741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d1fbfbde4a4c64b8fa05c5293f198c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <StomachPrefab>k__BackingField: {fileID: 0}
   rSpeed: 3
   rFriction: 0.15
   rSmoothness: 5

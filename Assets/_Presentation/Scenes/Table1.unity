@@ -415,7 +415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &836710436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   foodPrefabs:
   - {fileID: 2976704159466524122, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
   - {fileID: 2976704159466524122, guid: 17599884691e91441981f9993624e9aa, type: 3}
-  foodCount: 2
+  foodCount: 3
   spawnPoint: {fileID: 256327503}
   foodParent: {fileID: 648239913}
   inStomach: 0
