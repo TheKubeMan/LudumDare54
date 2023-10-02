@@ -2697,9 +2697,11 @@ MonoBehaviour:
   - {fileID: 2976704159466524122, guid: c12787f14d2b23744b45d166632046d9, type: 3}
   - {fileID: 2976704159466524122, guid: e49d058fdecc3064d95449f0c0231e02, type: 3}
   cola: {fileID: 9039109990033364805, guid: 279fe2076ec50cf419c46bb038584311, type: 3}
-  foodCount: 16
+  foodCountMin: 10
+  foodCountMax: 15
   spawnPoint: {fileID: 256327503}
   foodParent: {fileID: 648239913}
+  foodCount: 16
   sizeForOneCola: 0
   inStomach: 0
   <WinFoodPercentile>k__BackingField: 0
@@ -2828,7 +2830,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3689333225748136621}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
