@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FoodSystem;
 using FoodSystem.Data;
 using UnityEngine;
 
+[RequireComponent(typeof(Food))]
 public class ControllObject : MonoBehaviour
 {
     public event Action OnFoodLanding;
+    [field:SerializeField] public GameObject StomachPrefab { get; private set; }
     Rigidbody2D rb;
     bool landed;
     public float rSpeed;
@@ -18,12 +21,23 @@ public class ControllObject : MonoBehaviour
     //мы закидываем индекс в стринг потому что в playerprefs нельзя использовать массивы
     //полученные индексы забираем в желудке, кидаем в массив и по ним спавним объекты 
     public string index;
-
+    private Food _food;
+    
     // Start is called before the first frame update
     void Start()
     {
         landed = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        _food = GetComponent<Food>();
+        _food.OnGroundEnter += RemoveFromLandedFood;
+        _food.OnGroundEnter += OnFoodLadingInvoke;
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("ControllObjectDisable");
+        _food.OnGroundEnter -= RemoveFromLandedFood;
+        _food.OnGroundEnter -= OnFoodLadingInvoke;
     }
 
     void Update()
@@ -42,9 +56,9 @@ public class ControllObject : MonoBehaviour
         {
             rb.velocity = new Vector2(0, 0);
             i = PlayerPrefs.GetString("items");
-            Debug.Log("i " + i);
+            //Debug.Log("i " + i);
             PlayerPrefs.SetString("items", index + " " + i);
-            Debug.Log("items " + PlayerPrefs.GetString("items"));
+            //Debug.Log("items " + PlayerPrefs.GetString("items"));
             gameObject.GetComponent<ControllObject>().enabled = false;
         }
     }
@@ -53,17 +67,25 @@ public class ControllObject : MonoBehaviour
     {
         if ((other.tag == "Finish" || other.tag == "food") && landed == false)
         {
-            Debug.Log("OnTriggerEnter2D");
-            landed = true;
-            OnFoodLanding?.Invoke();
+            Land();
         }
     }
 
-    private void OnDestroy()
+    private void RemoveFromLandedFood()
     {
-        if (!landed)
-        {
-            OnFoodLanding?.Invoke();
-        }
+        FoodSpawner.LandedFood.Remove(gameObject);
+    }
+
+    private void OnFoodLadingInvoke()
+    {
+        OnFoodLanding?.Invoke();
+    }
+
+    private void Land()
+    {
+        landed = true;
+        _food.FoodScorer.AddScore(1);
+        FoodSpawner.LandedFood.Add(StomachPrefab);
+        OnFoodLadingInvoke();
     }
 }

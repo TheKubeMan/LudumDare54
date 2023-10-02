@@ -329,13 +329,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4ddf46881b6494c9ab65aafeded845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodPrefabs:
-  - {fileID: 2976704159466524122, guid: d8f5c13adbf9d2543ac19b67b547bf0a, type: 3}
-  - {fileID: 2976704159466524122, guid: 17599884691e91441981f9993624e9aa, type: 3}
-  foodCount: 30
+  foodPrefabs: []
+  foodCount: 0
   spawnPoint: {fileID: 1222539233}
   foodParent: {fileID: 137802340}
-  inStomach: 0
+  inStomach: 1
 --- !u!4 &758871042
 Transform:
   m_ObjectHideFlags: 0

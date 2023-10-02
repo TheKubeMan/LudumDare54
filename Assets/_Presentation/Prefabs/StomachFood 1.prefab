@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6619407524679332132}
   - component: {fileID: 2247726483756269741}
   m_Layer: 0
-  m_Name: NormalFood 1
+  m_Name: StomachFood 1
   m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionConfig: {fileID: 11400000, guid: 30aeb454811d27f4796a5d52aaa06209, type: 2}
-  <Size>k__BackingField: 0
 --- !u!114 &2247726483756269741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d1fbfbde4a4c64b8fa05c5293f198c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <StomachPrefab>k__BackingField: {fileID: 2976704159466524122, guid: 7f090e01829129f439656d4344047552, type: 3}
   rSpeed: 3
   rFriction: 0.15
   rSmoothness: 5
