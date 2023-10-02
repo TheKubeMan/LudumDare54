@@ -18,6 +18,11 @@ namespace FoodSystem.Data
             return _pool.Remove(gameObject);
         }
 
+        public void Insert(GameObject gameObject, int position)
+        {
+            _pool.Insert(position, gameObject);
+        }
+
         public GameObject GetActive()
         {
             return _pool.FirstOrDefault(obj => !obj.activeSelf);

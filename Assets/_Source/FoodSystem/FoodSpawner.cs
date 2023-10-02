@@ -14,14 +14,18 @@ namespace FoodSystem
     public class FoodSpawner : MonoBehaviour
     {
         public event Action OnFoodSpawn;
+        public event Action OnAllFoodSpawned;
         public static List<GameObject> LandedFood = new List<GameObject>();
         [SerializeField] private List<GameObject> foodPrefabs;
+        [SerializeField] private GameObject cola;
         [SerializeField] private int foodCount;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private Transform foodParent;
+        [SerializeField] private float sizeForOneCola;
         [SerializeField] private bool inStomach;
         [Inject] private FoodScorer _foodScorer;
         [Inject] private DiContainer _diContainer;
+        private float _totalFoodSize;
         private FoodPool _foodPool = new FoodPool();
         private Random rnd = new Random();
         public int SpawnedFoodCount { get; private set; }
@@ -42,7 +46,7 @@ namespace FoodSystem
         private void Start()
         {
             SpawnFoodPool();
-            SpawnFoodFull();
+            Spawn();
         }
 
         private void OnDisable()
@@ -50,11 +54,11 @@ namespace FoodSystem
             var controllObjects = transform.GetComponentsInChildren<ControllObject>();
             foreach (var obj in controllObjects)
             {
-                obj.OnFoodFullLanding -= SpawnFoodFull;
+                obj.OnLanding -= Spawn;
             }
         }
 
-        public void SpawnFoodFull()
+        public void Spawn()
         {
             if (SpawnedFoodCount >= _foodPool.Count())
             {
@@ -71,12 +75,20 @@ namespace FoodSystem
             OnFoodSpawn?.Invoke();
         }
 
-        public void SpawnFoodObject(GameObject gameObject)
+        public void SpawnFoodObject(GameObject gameObject, Type type)
         {
             var food = _diContainer.InstantiatePrefab(gameObject, Vector3.zero, quaternion.identity, foodParent);
             food.SetActive(false);
-            _foodPool.Add(food);
-            food.GetComponent<ControllObject>().OnFoodFullLanding += SpawnFoodFull;
+            if (type == typeof(Food))
+            {
+                _foodPool.Add(food);
+            }
+            else if(type == typeof(Cola))
+            {
+                _foodPool.Insert(food, rnd.Next(1, _foodPool.Count()-1));
+            }
+            food.GetComponent<ControllObject>().OnLanding += Spawn;
+            _totalFoodSize += food.GetComponent<Food>().Size;
         }
     
         private void SpawnFoodPool()
@@ -86,14 +98,20 @@ namespace FoodSystem
             {
                 for (int i = 0; i < foodCount; i++)
                 {
-                    SpawnFoodObject(foodPrefabs[rnd.Next(0, foodPrefabs.Count)]);
+                    SpawnFoodObject(foodPrefabs[rnd.Next(0, foodPrefabs.Count)], typeof(Food));
                 }
             }
             else
             {
                 for (int i = 0; i < foodCount; i++)
                 {
-                    SpawnFoodObject(LandedFood[i]);
+                    SpawnFoodObject(LandedFood[i],typeof(Food));
+                }
+
+                for (int i = 0; i < _totalFoodSize / sizeForOneCola; i++)
+                {
+                    SpawnFoodObject(cola,typeof(Cola));
+                    foodCount++;
                 }
             }
         }
@@ -101,6 +119,7 @@ namespace FoodSystem
         private void SpawnerFinish()
         {
             Debug.Log("SpawnerFinish");
+            OnAllFoodSpawned?.Invoke();
             if (inStomach)
             {
                 SceneChanger.LoadSceneBySceneIndex(0);

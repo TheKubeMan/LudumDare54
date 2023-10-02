@@ -8,7 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(Food))]
 public class ControllObject : MonoBehaviour
 {
-    public event Action OnFoodFullLanding;
+    public event Action OnLanding;
     [field:SerializeField] public GameObject StomachPrefab { get; private set; }
     Rigidbody2D rb;
     bool landed;
@@ -27,14 +27,15 @@ public class ControllObject : MonoBehaviour
         landed = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
         _food = GetComponent<Food>();
+
+        _food.OnGroundEnter += Land;
         _food.OnGroundEnter += RemoveFromLandedFood;
-        _food.OnGroundEnter += OnFoodFullLandingInvoke;
     }
 
     private void OnDestroy()
     {
+        _food.OnGroundEnter -= Land;
         _food.OnGroundEnter -= RemoveFromLandedFood;
-        _food.OnGroundEnter -= OnFoodFullLandingInvoke;
     }
 
     void Update()
@@ -52,28 +53,36 @@ public class ControllObject : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        if ((other.tag == "Finish" || other.tag == "food") && landed == false)
+        LandCompareTags(other.gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        LandCompareTags(col.gameObject);
+    }
+
+    private void LandCompareTags(GameObject comparedGameObject)
+    {
+        if ((comparedGameObject.CompareTag("Finish") || comparedGameObject.CompareTag("food")) && landed == false)
         {
             Land();
+            _food.ScorerUpdate(1);
+            FoodSpawner.LandedFood.Add(StomachPrefab);
         }
     }
 
     private void RemoveFromLandedFood()
     {
-        FoodSpawner.LandedFood.Remove(gameObject);
-    }
-
-    private void OnFoodFullLandingInvoke()
-    {
-        OnFoodFullLanding?.Invoke();
+        FoodSpawner.LandedFood.Remove(StomachPrefab);
     }
 
     private void Land()
     {
-        rb.velocity = new Vector2(0, 0);
-        landed = true;
-        _food.FoodScorer.AddScore(1);
-        FoodSpawner.LandedFood.Add(StomachPrefab);
-        OnFoodFullLandingInvoke();
+        if (!landed)
+        {
+            rb.velocity = new Vector2(0, 0);
+            landed = true;
+            OnLanding?.Invoke();
+        }
     }
 }

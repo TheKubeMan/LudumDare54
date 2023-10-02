@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ship
   - asteroid
+  - food
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Food
   - Ground
   - Lose
-  - 
+  - Hole
   - 
   - 
   - 

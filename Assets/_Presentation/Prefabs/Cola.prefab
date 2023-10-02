@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9039109990033364808}
   - component: {fileID: 9039109990033364809}
   - component: {fileID: 9039109990033364811}
+  - component: {fileID: -3092651033873714097}
   - component: {fileID: 9039109990033364807}
   - component: {fileID: 9039109990033364804}
   m_Layer: 7
@@ -98,6 +99,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionConfig: {fileID: 11400000, guid: 30aeb454811d27f4796a5d52aaa06209, type: 2}
+  <Size>k__BackingField: 0
+--- !u!114 &-3092651033873714097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9039109990033364805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d1fbfbde4a4c64b8fa05c5293f198c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <StomachPrefab>k__BackingField: {fileID: 0}
+  rSpeed: 3
+  rFriction: 0.15
+  rSmoothness: 5
+  index: 
 --- !u!50 &9039109990033364807
 Rigidbody2D:
   serializedVersion: 4

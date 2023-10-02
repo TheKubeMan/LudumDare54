@@ -11,21 +11,31 @@ namespace FoodSystem
     {
         public event Action OnGroundEnter;
         [SerializeField] protected CollisionConfig collisionConfig;
-        [field:SerializeField] protected float Size { get; private set; }
+        [field:SerializeField] public float Size { get; private set; }
         [Inject] public FoodScorer FoodScorer { get; private set; }
         
         protected virtual void OnTriggerEnter2D(Collider2D col)
         {
             if (collisionConfig.GroundMask.Contains(col.gameObject.layer))
             {
-                OnGroundEnter?.Invoke();
+                FoodScorer.AddScore(-1);
+                OnGroundEnterInvoke();
                 Destroy(gameObject);
             }
-            
-            if (collisionConfig.LoseMask.Contains(col.gameObject.layer))
+            else if (collisionConfig.LoseMask.Contains(col.gameObject.layer))
             {
                 SceneChanger.ReloadScene();
             }
+        }
+
+        protected void OnGroundEnterInvoke()
+        {
+            OnGroundEnter?.Invoke();
+        }
+
+        public virtual void ScorerUpdate(int value)
+        {
+            FoodScorer.AddScore(value);
         }
     }
 }
