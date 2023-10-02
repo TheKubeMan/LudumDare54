@@ -18,8 +18,6 @@ public class ControllObject : MonoBehaviour
     float rotateVal;
     Quaternion RotateTo;
     string i;
-    //мы закидываем индекс в стринг потому что в playerprefs нельзя использовать массивы
-    //полученные индексы забираем в желудке, кидаем в массив и по ним спавним объекты 
     public string index;
     private Food _food;
     
