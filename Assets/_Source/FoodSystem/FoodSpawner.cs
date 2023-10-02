@@ -23,6 +23,7 @@ namespace FoodSystem
         [SerializeField] private Transform foodParent;
         [SerializeField] private float sizeForOneCola;
         [SerializeField] private bool inStomach;
+        [field:SerializeField] public float WinFoodPercentile { get; private set; }
         [Inject] private FoodScorer _foodScorer;
         [Inject] private DiContainer _diContainer;
         private float _totalFoodSize;
