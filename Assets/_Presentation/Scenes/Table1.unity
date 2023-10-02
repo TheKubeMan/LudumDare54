@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 103.14215, y: 21.72002, z: 89.5708, w: 24.434952}
+  m_margin: {x: 129.13968, y: 21.72002, z: 118.818085, w: 24.434952}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2697,8 +2697,8 @@ MonoBehaviour:
   - {fileID: 2976704159466524122, guid: c12787f14d2b23744b45d166632046d9, type: 3}
   - {fileID: 2976704159466524122, guid: e49d058fdecc3064d95449f0c0231e02, type: 3}
   cola: {fileID: 9039109990033364805, guid: 279fe2076ec50cf419c46bb038584311, type: 3}
-  foodCountMin: 10
-  foodCountMax: 15
+  foodCountMin: 14
+  foodCountMax: 25
   spawnPoint: {fileID: 256327503}
   foodParent: {fileID: 648239913}
   foodCount: 16

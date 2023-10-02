@@ -946,12 +946,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPrefabs: []
   cola: {fileID: 9039109990033364805, guid: 279fe2076ec50cf419c46bb038584311, type: 3}
-  foodCount: 0
+  foodCountMin: 0
+  foodCountMax: 0
   spawnPoint: {fileID: 1222539233}
   foodParent: {fileID: 137802340}
-  sizeForOneCola: 14
+  foodCount: 0
+  sizeForOneCola: 13
   inStomach: 1
-  <WinFoodPercentile>k__BackingField: 10
+  <WinFoodPercentile>k__BackingField: 70
 --- !u!4 &758871042
 Transform:
   m_ObjectHideFlags: 0
