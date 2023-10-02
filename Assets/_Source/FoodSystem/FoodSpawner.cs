@@ -18,9 +18,11 @@ namespace FoodSystem
         public static List<GameObject> LandedFood = new List<GameObject>();
         [SerializeField] private List<GameObject> foodPrefabs;
         [SerializeField] private GameObject cola;
-        [SerializeField] private int foodCount;
+        [SerializeField] private int foodCountMin;
+        [SerializeField] private int foodCountMax;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private Transform foodParent;
+        [SerializeField] private int foodCount;
         [SerializeField] private float sizeForOneCola;
         [SerializeField] private bool inStomach;
         [field:SerializeField] public float WinFoodPercentile { get; private set; }
@@ -36,6 +38,7 @@ namespace FoodSystem
             if (!inStomach)
             {
                 LandedFood.Clear();
+                foodCount = rnd.Next(foodCountMin, foodCountMax+1);
             }
             else
             {
