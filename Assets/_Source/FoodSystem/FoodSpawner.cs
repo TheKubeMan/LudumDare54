@@ -14,7 +14,7 @@ namespace FoodSystem
     public class FoodSpawner : MonoBehaviour
     {
         public event Action OnFoodSpawn;
-        public event Action OnAllFoodSpawned;
+        public event Action OnAllStomachFoodSpawned;
         public static List<GameObject> LandedFood = new List<GameObject>();
         [SerializeField] private List<GameObject> foodPrefabs;
         [SerializeField] private GameObject cola;
@@ -119,10 +119,9 @@ namespace FoodSystem
         private void SpawnerFinish()
         {
             Debug.Log("SpawnerFinish");
-            OnAllFoodSpawned?.Invoke();
             if (inStomach)
             {
-                SceneChanger.LoadSceneBySceneIndex(0);
+                OnAllStomachFoodSpawned?.Invoke();
             }
             else
             {
