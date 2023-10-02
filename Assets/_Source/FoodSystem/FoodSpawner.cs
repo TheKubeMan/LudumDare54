@@ -77,7 +77,7 @@ namespace FoodSystem
 
         public void SpawnFoodObject(GameObject gameObject, Type type)
         {
-            var food = _diContainer.InstantiatePrefab(gameObject, Vector3.zero, quaternion.identity, foodParent);
+            var food = _diContainer.InstantiatePrefab(gameObject, spawnPoint.transform.position, quaternion.identity, foodParent);
             food.SetActive(false);
             if (type == typeof(Food))
             {
