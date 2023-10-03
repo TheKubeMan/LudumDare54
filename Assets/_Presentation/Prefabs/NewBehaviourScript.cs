@@ -40,8 +40,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
 
     {
-
-        audioSrc1 = BGMusic1.GetComponent<AudioSource>();
+  audioSrc1 = BGMusic1.GetComponent<AudioSource>();
         { }
     }
 }

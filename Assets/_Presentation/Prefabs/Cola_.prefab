@@ -13,13 +13,12 @@ GameObject:
   - component: {fileID: 9039109990033364811}
   - component: {fileID: -3092651033873714097}
   - component: {fileID: 9039109990033364807}
-  - component: {fileID: 7554101409063962471}
   - component: {fileID: 4296905193113500544}
   - component: {fileID: 1239954875771618557}
   - component: {fileID: 6225479363469195494}
   m_Layer: 7
   m_Name: Cola_
-  m_TagString: Untagged
+  m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,62 +140,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!68 &7554101409063962471
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9039109990033364805}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.01
-  m_Points:
-  - {x: 2.3633463, y: -7.826127}
-  - {x: 1.7625978, y: -7.9004054}
-  - {x: 1.1837597, y: -7.838958}
-  - {x: 0.74128836, y: -8.272161}
-  - {x: -0.084153354, y: -8.323661}
-  - {x: -0.3599687, y: -8.20821}
-  - {x: -0.56648004, y: -7.886376}
-  - {x: -1.108233, y: -8.049735}
-  - {x: -1.7537231, y: -8.039842}
-  - {x: -2.1729712, y: -7.8531103}
-  - {x: -2.2958066, y: -7.5333595}
-  - {x: -2.611883, y: -6.3411717}
-  - {x: -2.5616202, y: -5.587134}
-  - {x: -2.2677996, y: -4.567602}
-  - {x: -2.5700307, y: 3.6968398}
-  - {x: -1.2685066, y: 5.787466}
-  - {x: -0.7863145, y: 7.291327}
-  - {x: -0.72788733, y: 7.835322}
-  - {x: -0.90575916, y: 7.8605795}
-  - {x: -0.8939886, y: 7.964918}
-  - {x: -0.7721305, y: 9.201032}
-  - {x: 0.1721037, y: 9.23788}
-  - {x: 0.8419714, y: 9.188815}
-  - {x: 1.0767722, y: 9.031477}
-  - {x: 1.0830858, y: 7.9100943}
-  - {x: 1.0690255, y: 7.8062177}
-  - {x: 0.93727124, y: 7.805778}
-  - {x: 0.99916947, y: 7.278676}
-  - {x: 1.1534466, y: 6.544188}
-  - {x: 1.5229745, y: 5.8243484}
-  - {x: 2.7603147, y: 3.6196792}
-  - {x: 2.562897, y: -3.0254242}
-  - {x: 2.2659042, y: -4.328344}
-  - {x: 2.6906285, y: -5.4322915}
-  - {x: 2.7929375, y: -6.5808315}
-  - {x: 2.36593, y: -7.826057}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!61 &4296905193113500544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -209,7 +152,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: 0.08943844, y: -0.8915062}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,7 +178,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: 0.11925149, y: 7.5235677}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,7 +202,7 @@ CompositeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
