@@ -125,6 +125,17 @@ namespace FoodSystem
             Debug.Log("SpawnerFinish");
             if (inStomach)
             {
+                if (PlayerPrefs.HasKey("MaxScore"))
+                {
+                    if (PlayerPrefs.GetInt("MaxScore") < _foodScorer.Score)
+                    {
+                        PlayerPrefs.SetInt("MaxScore", _foodScorer.Score);
+                    }
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("MaxScore", _foodScorer.Score);
+                }
                 OnAllStomachFoodSpawned?.Invoke();
             }
             else
