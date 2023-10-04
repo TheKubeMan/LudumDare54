@@ -4199,7 +4199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a891d5a8615e4144ad446c59ef3acb5, type: 2}
   m_sharedMaterial: {fileID: 3531012694489788349, guid: 0a891d5a8615e4144ad446c59ef3acb5, type: 2}
@@ -4315,7 +4315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 658ce086fbbce194eb4dd25e89a6ed7e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c617ac0a7f6383448e4743b640837d9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4373,8 +4373,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: f9a98a95f4cf5e44181200ca9302ad04, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 511ed1c861d60a84fbf7025a42b91789, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 772031bd1dc1a0843a94fa8e61da37c3, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 7771e46eef1dc6c468bcc5c29cabf303, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
