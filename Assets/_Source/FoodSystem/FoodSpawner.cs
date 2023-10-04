@@ -26,25 +26,37 @@ namespace FoodSystem
         [SerializeField] private float sizeForOneCola;
         [SerializeField] private bool inStomach;
         [field:SerializeField] public float WinFoodPercentile { get; private set; }
+        [Inject] private FoodSpawnPoint _foodSpawnPoint;
         [Inject] private FoodScorer _foodScorer;
         [Inject] private DiContainer _diContainer;
-        private float _totalFoodSize;
         private FoodPool _foodPool = new FoodPool();
         private Random rnd = new Random();
+        private float _totalFoodSize;
+        private bool _spawnerFinish;
         public int SpawnedFoodCount { get; private set; }
 
         private void Awake()
         {
             if (!inStomach)
             {
+                var playerMaxScore = PlayerPrefs.GetInt("MaxScore");
                 LandedFood.Clear();
-                foodCount = rnd.Next(foodCountMin, foodCountMax+1);
+                if (playerMaxScore < foodCountMin)
+                {
+                    foodCount = rnd.Next(foodCountMin, foodCountMax+1);
+                }
+                else
+                {
+                    foodCount = rnd.Next(playerMaxScore, foodCountMax + 1 + playerMaxScore - foodCountMin);
+                }
             }
             else
             {
                 foodCount = LandedFood.Count;
             }
             _foodScorer.SetMaxScore(foodCount);
+
+            _foodSpawnPoint.OnStomachSpawnPointFill += SpawnerFinish;
         }
 
         private void Start()
@@ -60,10 +72,13 @@ namespace FoodSystem
             {
                 obj.OnLanding -= Spawn;
             }
+            
+            _foodSpawnPoint.OnStomachSpawnPointFill -= SpawnerFinish;
         }
 
         public void Spawn()
         {
+            if (_spawnerFinish) return;
             if (SpawnedFoodCount >= _foodPool.Count())
             {
                 SpawnerFinish();
@@ -123,6 +138,7 @@ namespace FoodSystem
         private void SpawnerFinish()
         {
             Debug.Log("SpawnerFinish");
+            _spawnerFinish = true;
             if (inStomach)
             {
                 if (PlayerPrefs.HasKey("MaxScore"))

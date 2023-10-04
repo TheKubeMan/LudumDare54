@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2247726483756269741}
   - component: {fileID: 7030939392273627183}
   - component: {fileID: 2100345302874480922}
+  - component: {fileID: 603817475691907670}
   - component: {fileID: 1335233286154146811}
   m_Layer: 7
   m_Name: NormalFood 7
@@ -152,7 +153,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: -3.863617, y: 0.4683175}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +179,8 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 5.1280756, y: -2.3181705}
+  m_UsedByComposite: 1
+  m_Offset: {x: 4.9367623, y: -2.7247126}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -190,7 +191,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.523851, y: 5.134351}
+  m_Size: {x: 8.141225, y: 4.703894}
+  m_EdgeRadius: 0
+--- !u!61 &603817475691907670
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976704159466524122}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 2.6903522, y: 0.11957157}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 18.78, y: 10.52}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6422791, y: 1.145613}
   m_EdgeRadius: 0
 --- !u!66 &1335233286154146811
 CompositeCollider2D:
@@ -202,24 +229,14 @@ CompositeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
-  - m_Collider: {fileID: 2100345302874480922}
-    m_ColliderPaths:
-    - - X: 9389708
-        Y: -4885346
-      - X: 9389708
-        Y: 249004
-      - X: 866149
-        Y: 248711
-      - X: 866442
-        Y: -4885346
   - m_Collider: {fileID: 7030939392273627183}
     m_ColliderPaths:
     - - X: 913163
@@ -230,15 +247,31 @@ CompositeCollider2D:
         Y: 4791389
       - X: -8640398
         Y: -3855047
+  - m_Collider: {fileID: 603817475691907670}
+    m_ColliderPaths:
+    - - X: 4511199
+        Y: -453234
+      - X: 4511199
+        Y: 692378
+      - X: 869212
+        Y: 692085
+      - X: 869505
+        Y: -453234
+  - m_Collider: {fileID: 2100345302874480922}
+    m_ColliderPaths:
+    - - X: 9007082
+        Y: -5076660
+      - X: 9007082
+        Y: -372765
+      - X: 866149
+        Y: -373058
+      - X: 866442
+        Y: -5076660
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.93894154, y: -0.4885346}
-      - {x: 0.93894154, y: 0.024900401}
-      - {x: 0.0913163, y: 0.0249007}
+    - - {x: 0.091287, y: -0.3855047}
       - {x: 0.091287, y: 0.4791682}
       - {x: -0.8640691, y: 0.47910962}
       - {x: -0.8640105, y: -0.3855047}
-      - {x: 0.0866383, y: -0.3855341}
-      - {x: 0.0866735, y: -0.4885346}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005

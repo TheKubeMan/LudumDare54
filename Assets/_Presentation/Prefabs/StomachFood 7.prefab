@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2247726483756269741}
   - component: {fileID: 3438669928487084335}
   - component: {fileID: 6285342042066763731}
+  - component: {fileID: 8990790283608486741}
   - component: {fileID: 7669523090737269131}
   m_Layer: 7
   m_Name: StomachFood 7
@@ -152,8 +153,8 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -4.053633, y: 0.35765266}
+  m_UsedByComposite: 1
+  m_Offset: {x: -4.3428435, y: 0.35765266}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -164,7 +165,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.498466, y: 8.176641}
+  m_Size: {x: 9.076886, y: 8.176641}
   m_EdgeRadius: 0
 --- !u!61 &6285342042066763731
 BoxCollider2D:
@@ -178,7 +179,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 4.484106, y: -2.4320588}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,6 +193,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.211483, y: 3.8847656}
   m_EdgeRadius: 0
+--- !u!61 &8990790283608486741
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976704159466524122}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 2.3779461, y: 1.089304}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 20.48}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.2199893, y: 3.179306}
+  m_EdgeRadius: 0
 --- !u!66 &7669523090737269131
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -202,15 +229,57 @@ CompositeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 3438669928487084335}
+    m_ColliderPaths:
+    - - X: 247452
+        Y: -4739423
+      - X: 247452
+        Y: 5648144
+      - X: -11249007
+        Y: 5647851
+      - X: -11248714
+        Y: -4739423
+  - m_Collider: {fileID: 6285342042066763731}
+    m_ColliderPaths:
+    - - X: 10879579
+        Y: -5557270
+      - X: 10879579
+        Y: -622082
+      - X: 479235
+        Y: -622375
+      - X: 479528
+        Y: -5557270
+  - m_Collider: {fileID: 8990790283608486741}
+    m_ColliderPaths:
+    - - X: 5684117
+        Y: -635641
+      - X: 5684117
+        Y: 3403334
+      - X: 339386
+        Y: 3403041
+      - X: 339679
+        Y: -635641
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 0.0247159, y: -0.4739423}
+      - {x: 0.0247159, y: 0.5648144}
+      - {x: -1.1249007, y: 0.5647558}
+      - {x: -1.1248422, y: -0.4739423}
+    - - {x: 1.0879287, y: -0.555727}
+      - {x: 1.0879287, y: -0.0622082}
+      - {x: 0.5684117, y: -0.0621934}
+      - {x: 0.5683824, y: 0.3403334}
+      - {x: 0.0339386, y: 0.3402748}
+      - {x: 0.0339972, y: -0.0635641}
+      - {x: 0.047923602, y: -0.0635935}
+      - {x: 0.0479821, y: -0.555727}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005

@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 6619407524679332132}
   - component: {fileID: 2247726483756269741}
   - component: {fileID: 5207360145806718498}
+  - component: {fileID: 741374743373569786}
+  - component: {fileID: 3787964039852379209}
+  - component: {fileID: 2260367478277475587}
   m_Layer: 7
   m_Name: NormalFood 2
   m_TagString: food
@@ -150,8 +153,8 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.043871403, y: -0.57032967}
+  m_UsedByComposite: 1
+  m_Offset: {x: -3.9788885, y: -1.9973221}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,5 +165,121 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.1806, y: 9.687626}
+  m_Size: {x: 10.200823, y: 6.833641}
   m_EdgeRadius: 0
+--- !u!61 &741374743373569786
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976704159466524122}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: -1.7939321, y: -0.040771008}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 20.48}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.303001, y: 8.982518}
+  m_EdgeRadius: 0
+--- !u!61 &3787964039852379209
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976704159466524122}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 5.4633408, y: 0.5843872}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 20.48}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.237257, y: 6.5906076}
+  m_EdgeRadius: 0
+--- !u!66 &2260367478277475587
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976704159466524122}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 1
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 741374743373569786}
+    m_ColliderPaths:
+    - - X: 2323750
+        Y: -4467583
+      - X: 2323750
+        Y: 4387200
+      - X: -5860886
+        Y: 4386907
+      - X: -5860593
+        Y: -4467583
+  - m_Collider: {fileID: 5207360145806718498}
+    m_ColliderPaths:
+    - - X: 1105281
+        Y: -5337151
+      - X: 1105281
+        Y: 1399312
+      - X: -8950189
+        Y: 1399019
+      - X: -8949896
+        Y: -5337151
+  - m_Collider: {fileID: 3787964039852379209}
+    m_ColliderPaths:
+    - - X: 8459637
+        Y: -2672366
+      - X: 8459637
+        Y: 3824520
+      - X: 2311369
+        Y: 3824227
+      - X: 2311662
+        Y: -2672366
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 0.1104988, y: -0.5337151}
+      - {x: 0.110557504, y: -0.4467583}
+      - {x: 0.232375, y: -0.446729}
+      - {x: 0.2324044, y: -0.2672366}
+      - {x: 0.8459637, y: -0.2672073}
+      - {x: 0.8459344, y: 0.382452}
+      - {x: 0.232375, y: 0.3824522}
+      - {x: 0.2323457, y: 0.43872002}
+      - {x: -0.5860886, y: 0.4386614}
+      - {x: -0.5861081, y: 0.1399109}
+      - {x: -0.89501894, y: 0.1398726}
+      - {x: -0.8949603, y: -0.5337151}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
